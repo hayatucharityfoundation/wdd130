@@ -592,9 +592,14 @@ h2 {
 }
 
 .home-hero-overlay h1 {
+    position: static;
+    width: auto;
+    padding: 0;
+    opacity: 1;
+    background-color: transparent;
     font-size: 32px;
-    margin-bottom: 10px;
     color: var(--accent2-color);
+    margin: 0 0 10px;
 }
 
 .home-hero-overlay p {
@@ -717,25 +722,57 @@ h2 {
     font-size: 14px;
 }
 
-/* =========================================
-   Trips Page: Intro, 3-Column Grid & Table
-   ========================================= */
-.trips-header {
-    background-color: #f4f4f4;
-    border: 1px solid #666;
-    text-align: center;
-    padding: 16px;
+/* Trips Page */
+.trips-hero {
+    position: relative;
+    margin: 0;
+    padding: 0;
 }
 
-.trips-header p {
-    margin: 12px auto 4px;
+.trips-hero > img {
+    display: block;
+    width: 100%;
+    height: 480px;
+    object-fit: cover;
+}
+
+.trips-hero-content {
+    position: absolute;
+    top: 72px;
+    left: 50%;
+    width: 80%;
+    transform: translateX(-50%);
+    padding: 24px;
+    border-radius: 6px;
+    background-color: rgba(27, 50, 99, 0.88);
+    color: var(--accent2-color);
+    text-align: center;
+}
+
+.trips-hero-content .page-title {
+    position: static;
+    width: auto;
+    margin: 0;
     padding: 0;
-    max-width: 700px;
+    opacity: 1;
+    background-color: transparent;
+    color: var(--accent2-color);
+    font-size: 38px;
+}
+
+.trips-hero-content p {
+    margin: 10px 0;
+    padding: 0;
+}
+
+.trips-hero-content .cta-btn {
+    background-color: #dfc59c;
+    color: #222;
 }
 
 .trips-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 16px;
     background-color: #f4f4f4;
     border: 1px solid #666;
@@ -751,11 +788,11 @@ h2 {
     flex-direction: column;
 }
 
-.trip-card img {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
+.trip-card > img {
     display: block;
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
 }
 
 .trip-body {
@@ -764,19 +801,19 @@ h2 {
 
 .trip-level {
     display: inline-block;
+    margin-bottom: 6px;
+    padding: 2px 8px;
+    border-radius: 3px;
     background-color: var(--accent1-color);
     color: var(--accent2-color);
     font-size: 12px;
     font-weight: bold;
-    padding: 2px 8px;
-    border-radius: 3px;
-    margin-bottom: 6px;
 }
 
 .trip-body h3 {
+    margin-bottom: 6px;
     color: var(--primary-color);
     font-size: 18px;
-    margin-bottom: 6px;
 }
 
 .trip-body p {
@@ -795,9 +832,10 @@ h2 {
 }
 
 .trips-table-wrap {
+    margin: 16px;
+    padding: 16px;
     background-color: #f4f4f4;
     border: 1px solid #666;
-    padding: 16px;
 }
 
 .trips-table-wrap h2 {
@@ -808,13 +846,13 @@ h2 {
     width: 100%;
     border-collapse: collapse;
     background-color: var(--accent2-color);
-    font-size: 14px;
+    font-size: 13px;
 }
 
 .trips-table th,
 .trips-table td {
+    padding: 8px;
     border: 1px solid #888;
-    padding: 10px;
     text-align: left;
 }
 
@@ -823,13 +861,15 @@ h2 {
     color: var(--accent2-color);
 }
 
+.trips-table tbody th {
+    font-weight: normal;
+}
+
 .trips-table tbody tr:nth-child(even) {
     background-color: #e8edf7;
 }
 
-/* =========================================
-   About Us Page: History & Adventures
-   ========================================= */
+/* About Us Page: History & Adventures */
 .history,
 .adventures {
     background-color: #f4f4f4;
@@ -887,9 +927,7 @@ h2 {
     font-size: 13px;
 }
 
-/* =========================================
-   Contact Us Page Styles
-   ========================================= */
+/* Contact Us Page Styles */
 .contact-info {
     text-align: center;
     padding: 16px 0 20px;
@@ -1057,9 +1095,7 @@ h2 {
     font-weight: normal;
 }
 
-/* =========================================
-   Footer Styles
-   ========================================= */
+/* Footer Styles */
 footer {
     display: flex;
     justify-content: space-between;
